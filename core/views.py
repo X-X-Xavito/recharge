@@ -16,7 +16,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
     serializer_class = CompanySerializer
 
 
-class CompanyView(ListView):
-    template_name="templates/company.html"
+class CompanyListView(ListView):
+    template_name="core/company.html"
     model = Company
     context_object_name = "company"
+
+company_list = CompanyListView.as_view()
